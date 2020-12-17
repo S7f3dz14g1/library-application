@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="400.0" style="-fx-background-radius: 20;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="99.0" fitWidth="107.0" pickOnBounds="true" preserveRatio="true" />
+      <VBox prefHeight="100.0" prefWidth="166.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tytuł" textAlignment="CENTER" wrappingWidth="178.13672256469727">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor" textAlignment="CENTER" wrappingWidth="175.501953125">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Text>
+         </children>
+      </VBox>
+      <VBox prefHeight="100.0" prefWidth="109.0">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="118.0" style="-fx-background-radius: 15;" text="Szczeguły" />
+            <Button mnemonicParsing="false" prefHeight="52.0" prefWidth="125.0" style="-fx-background-radius: 15;" text="Wyporzycz" />
+         </children>
+      </VBox>
+   </children>
+</HBox>

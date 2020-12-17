@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane  fx:id="registrationPane" prefHeight="250.0" prefWidth="240.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.RegistrationController">
+   <children>
+      <Text layoutX="1.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rejestraja" textAlignment="CENTER" wrappingWidth="240.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Button layoutX="49.0" layoutY="195.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="62.0" text="Wróć" />
+      <Button layoutX="133.0" layoutY="195.0" mnemonicParsing="false" text="Rejestruj" />
+      <Text layoutX="22.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" />
+      <Text layoutX="22.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hasło" />
+      <Text layoutX="22.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Powtórz hasło" />
+      <Text layoutX="25.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mejl" />
+      <PasswordField layoutX="120.0" layoutY="116.0" prefHeight="26.0" prefWidth="102.0" />
+      <PasswordField layoutX="120.0" layoutY="83.0" prefHeight="26.0" prefWidth="102.0" />
+      <TextField layoutX="121.0" layoutY="49.0" prefHeight="26.0" prefWidth="102.0" />
+      <TextField layoutX="120.0" layoutY="149.0" prefHeight="26.0" prefWidth="102.0" />
+   </children>
+</Pane>
