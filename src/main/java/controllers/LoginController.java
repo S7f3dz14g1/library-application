@@ -1,11 +1,9 @@
 package controllers;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import informationBox.InformationBox;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;
-import javafx.scene.control.Hyperlink;
+import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
@@ -20,59 +18,52 @@ public class LoginController {
     private Pane loginPane;
 
     @FXML
-    private Button loginButton;
-
-    @FXML
     private TextField loginLoginText;
-
-    @FXML
-    private Hyperlink registrationLoginText;
 
     @FXML
     private PasswordField passwordLoginText;
 
     @FXML
-    public void onLoginClicked(){
-        model.login(new User(loginLoginText.toString(),passwordLoginText.toString()));
+    public void onLoginClicked() {
+        model.login(new User(loginLoginText.getText().toString(),
+                passwordLoginText.getText().toString()));
+    }
+
+    @FXML
+    public void onRegistrationClicked() {
+        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/Registration.fxml"));
+        Pane pane = null;
+        try {
+            pane = loader.load();
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+        RegistrationController controllerMain = loader.getController();
+        controllerMain.setLoginController(LoginController.this);
+        setScreen(pane);
     }
 
     private LoginModel model;
 
-    public void initialize(){
-        model=new LoginModel(this);
-        registrationLoginText.setOnAction(onClickedRegistration);
+    public void initialize() {
+        model = new LoginModel(this);
     }
-    private EventHandler<ActionEvent> onClickedRegistration = new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent e) {
-            FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/Registration.fxml"));
-            Pane pane  = null;
-            try {
-                pane = loader.load();
-            } catch (IOException e1) {
-                e1.printStackTrace();
-            }
-            RegistrationController controllerMain=loader.getController();
-            controllerMain.setLoginController(LoginController.this);
-            setScreen(pane);
-        }
-    };
-//metoda do przenoszenia do głównego okna
-    public void openMainWindow(){
+
+    public void openMainWindow() {
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/MainWindow.fxml"));
         try {
+            //zmiana rozmiarów okna
             setScreen(loader.load());
         } catch (IOException e1) {
             e1.printStackTrace();
         }
     }
 
-
-    public void showMessage(String message){
-       //wyświetleniee alertu o błędzie chyba nowe okno
+    public void showMessage(String message) {
+        InformationBox.infoBox(message);
     }
 
-    public void setScreen(Pane pane){
+    public void setScreen(Pane pane) {
         loginPane.getChildren().clear();
         loginPane.getChildren().add(pane);
     }
