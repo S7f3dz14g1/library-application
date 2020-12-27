@@ -61,8 +61,8 @@ public class MainWindowController {
         emptyListBook.getChildren().add(pane);
     }
 
-    public void setNick(String nick){//przez to nie chce działąć
-       // nickText.setText(nick);
+    public void setNick(String nick){
+        nickText.setText(nick);
     }
 
     public void setToken(String token){

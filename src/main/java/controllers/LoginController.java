@@ -51,13 +51,14 @@ public class LoginController {
     public void openMainWindow(String token) {
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/MainWindow.fxml"));
         try {
-           MainWindowController controller=  new MainWindowController();
-            controller.setNick(loginLoginText.getText().toString());//tutaj wywala błąd
-            controller.setToken(token);
             setScreen(loader.load());
         } catch (IOException e1) {
             e1.printStackTrace();
         }
+        //wczesniej byl tworzony obiekt MainWidowController, gdzie pole nick jest puste (tworzy go dopiero fxml) dlatego wywalało nulla
+        MainWindowController controller=  loader.getController();  //new MainWindowController();
+        controller.setNick(loginLoginText.getText().toString());
+        controller.setToken(token);
     }
 
     public void showMessage(String message) {
