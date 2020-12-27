@@ -3,7 +3,6 @@ package controllers;
 import informationBox.InformationBox;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
@@ -49,10 +48,12 @@ public class LoginController {
         model = new LoginModel(this);
     }
 
-    public void openMainWindow() {
+    public void openMainWindow(String token) {
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/MainWindow.fxml"));
         try {
-            //zmiana rozmiarów okna
+           MainWindowController controller=  new MainWindowController();
+            controller.setNick(loginLoginText.getText().toString());//tutaj wywala błąd
+            controller.setToken(token);
             setScreen(loader.load());
         } catch (IOException e1) {
             e1.printStackTrace();

@@ -26,7 +26,6 @@ public class ApiConfig {
                 .header("Content-Type", "application/json")
                 .POST(HttpRequest.BodyPublishers.ofString(json.toString()))
                 .build();
-
         try {
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
@@ -68,7 +67,7 @@ public class ApiConfig {
                     } else {
                         return null;
                     }
-                } else if (response.statusCode() == 403) {
+                } else if (response.statusCode() == 401) {
                     throw new Exception("Incorrect login or password");
                 }
             }

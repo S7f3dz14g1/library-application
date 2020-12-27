@@ -12,6 +12,10 @@ public class FxApplication extends Application {
         Pane stackPane=loader.load();
         Scene scene= new Scene(stackPane);
         primaryStage.setTitle("LibraryApp");
+        primaryStage.setMaxHeight(400);
+        primaryStage.setMaxWidth(650);
+        primaryStage.setMinHeight(400);
+        primaryStage.setMinWidth(650);
         primaryStage.setScene(scene);
         primaryStage.show();
     }

@@ -14,18 +14,16 @@ public class LoginModel {
         apiConfig=new ApiConfig();
     }
 
-    public void login(User user){
+    public void   login(User user){
         if(!StringHelper.validatePasswordLogin(user.getPassword())||!StringHelper.validateNickLogin(user.getName())){
             controller.showMessage("Dane niepoprawne");
-        }else {
+        }else{
             try{
-                apiConfig.login(user.getName(),user.getPassword());
-                controller.openMainWindow();
+                controller.openMainWindow(apiConfig.login(user.getName(),user.getPassword()));
             }catch (Exception e){
+                System.out.println(e.getMessage());
                 controller.showMessage("Błędne dane");
             }
         }
-        //sprawdzić czy istnieje w bazie
-        //zalogować i przenieś do mainWindow
     }
 }

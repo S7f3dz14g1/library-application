@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainWindowController">
    <children>
       <Pane layoutY="39.0" prefHeight="358.0" prefWidth="194.0" style="-fx-background-color: #1e3577; -fx-background-radius: 10;">
          <children>
@@ -29,28 +30,31 @@
             <Button alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="102.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: #1e3577;" text="Date" textFill="#fffbfb" />
             <Button alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="77.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: #1e3577;" text="Ranting" textFill="#fffbfb" />
          </children></Pane>
-      <Pane prefHeight="33.0" prefWidth="600.0" style="-fx-background-color: #ffffff;">
+      <Pane prefHeight="33.0" prefWidth="650.0" style="-fx-background-color: #ffffff;">
          <children>
             <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="561.0" layoutY="2.0" pickOnBounds="true" smooth="false">
                <image>
-                  <Image url="@../user_icon.png" />
+                  <Image url="@../images/user_icon.png" />
                </image></ImageView>
             <ImageView fitHeight="25.0" fitWidth="32.0" layoutX="26.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../library_logo.png" />
+                  <Image url="@../images/library_logo.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="25.0" fitWidth="32.0" layoutX="419.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../search.png" />
+                  <Image url="@../images/search.png" />
                </image>
             </ImageView>
-            <TextField layoutX="270.0" layoutY="4.0" prefHeight="25.0" prefWidth="149.0" />
-            <Text layoutX="444.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nick" textAlignment="RIGHT" wrappingWidth="108.390625" />
+            <TextField fx:id="titleBookText" layoutX="270.0" layoutY="4.0" prefHeight="25.0" prefWidth="149.0" />
+            <Text fx:id="nickText" layoutX="444.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nick" textAlignment="RIGHT" wrappingWidth="108.390625" />
          </children></Pane>
       <Pane layoutX="194.0" layoutY="33.0" prefHeight="367.0" prefWidth="406.0" style="-fx-background-color: f1f1f1;">
          <children>
-            <VBox layoutY="-2.0" prefHeight="375.0" prefWidth="406.0" />
+            <VBox fx:id="emptyListBook" layoutY="-2.0" prefHeight="367.0" prefWidth="406.0">
+               <padding>
+                  <Insets bottom="20.0" left="30.0" top="20.0" />
+               </padding></VBox>
          </children>
       </Pane>
    </children>

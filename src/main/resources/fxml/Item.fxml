@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="400.0" style="-fx-background-radius: 20;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="372.0" style="-fx-background-radius: 20;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ItemController">
    <children>
-      <ImageView fitHeight="99.0" fitWidth="107.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="90.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/old_book.PNG" />
+         </image></ImageView>
       <VBox prefHeight="100.0" prefWidth="166.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tytuł" textAlignment="CENTER" wrappingWidth="178.13672256469727">
@@ -25,8 +29,17 @@
       <VBox prefHeight="100.0" prefWidth="109.0">
          <children>
             <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="118.0" style="-fx-background-radius: 15;" text="Szczeguły" />
-            <Button mnemonicParsing="false" prefHeight="52.0" prefWidth="125.0" style="-fx-background-radius: 15;" text="Wyporzycz" />
+            <Button mnemonicParsing="false" prefHeight="52.0" prefWidth="125.0" style="-fx-background-radius: 15;" text="Wyporzycz">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin></Button>
          </children>
+         <HBox.margin>
+            <Insets bottom="5.0" />
+         </HBox.margin>
       </VBox>
    </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
 </HBox>

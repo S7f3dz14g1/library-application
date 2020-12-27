@@ -27,8 +27,7 @@ public class RegistrationModel {
         }else {
             try{
                 if(apiConfig.registration(login,password1,email).equals("1")) {
-                    apiConfig.login(login, password1);
-                    controller.openMainWindow();
+                    controller.openMainWindow(apiConfig.login(login, password1),login);
                 }
             }catch (Exception e){
                 controller.alertWindow("Podany urzydkownik już istniej");

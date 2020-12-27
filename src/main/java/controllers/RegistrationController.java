@@ -7,6 +7,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import models.RegistrationModel;
+import models.User;
 
 import java.io.IOException;
 
@@ -69,10 +70,12 @@ public class RegistrationController {
         InformationBox.infoBox(message);
     }
 
-    public void openMainWindow() {
+    public void openMainWindow(String taken, String nick) {
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/MainWindow.fxml"));
         try {
-            //zmiana rozmiarów okna
+            MainWindowController mainWindowController=new MainWindowController();
+            mainWindowController.setToken(taken);
+            mainWindowController.setNick(nick);
             loginController.setScreen(loader.load());
         } catch (IOException e1) {
             e1.printStackTrace();
