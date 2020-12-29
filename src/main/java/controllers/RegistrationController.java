@@ -73,12 +73,12 @@ public class RegistrationController {
     public void openMainWindow(String taken, String nick) {
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/MainWindow.fxml"));
         try {
-            MainWindowController mainWindowController=new MainWindowController();
-            mainWindowController.setToken(taken);
-            mainWindowController.setNick(nick);
             loginController.setScreen(loader.load());
         } catch (IOException e1) {
             e1.printStackTrace();
         }
+        MainWindowController mainWindowController=loader.getController();
+        mainWindowController.setToken(taken);
+        mainWindowController.setNick(nick);
     }
 }

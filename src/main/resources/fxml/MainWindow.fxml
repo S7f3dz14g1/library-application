@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainWindowController">
+<Pane prefHeight="400.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainWindowController">
    <children>
       <Pane layoutY="39.0" prefHeight="358.0" prefWidth="194.0" style="-fx-background-color: #1e3577; -fx-background-radius: 10;">
          <children>
@@ -14,23 +14,23 @@
                <font>
                   <Font size="18.0" />
                </font></Text>
-            <Button alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="52.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: #1e3577;" text="Title" textFill="#fffbfb" />
-            <Button alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="290.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: #1e3577;" text="History" textFill="#fffbfb" />
+            <Button fx:id="sortByTitleButton" alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="52.0" mnemonicParsing="false" onAction="#onClickedTitleButton" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: #1e3577;" text="Title" textFill="#fffbfb" />
+            <Button fx:id="historyButton" alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="290.0" mnemonicParsing="false" onAction="#onClickedHistoryButton" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: #1e3577;" text="History" textFill="#fffbfb" />
          <Text fill="#f0e5e5" layoutX="14.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your books" wrappingWidth="158.00000036548226">
                <font>
                   <Font size="18.0" />
                </font></Text>
-            <Button alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="265.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: #1e3577;" text="Reading" textFill="#fffbfb" />
-            <Button alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="198.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: #1e3577;" text="Discover" textFill="#fffbfb" />
+            <Button fx:id="readingButton" alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="265.0" mnemonicParsing="false" onAction="#onClickedReadingButton" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: #1e3577;" text="Reading" textFill="#fffbfb" />
+            <Button fx:id="discoverButton" alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="198.0" mnemonicParsing="false" onAction="#onClickedDiscoverButton" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: #1e3577;" text="Discover" textFill="#fffbfb" />
          <Text fill="#f0e5e5" layoutX="14.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Browase" wrappingWidth="158.00000036548226">
                <font>
                   <Font size="18.0" />
                </font></Text>
-            <Button alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="173.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: #1e3577;" text="Top Books" textFill="#fffbfb" />
-            <Button alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="102.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: #1e3577;" text="Date" textFill="#fffbfb" />
-            <Button alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="77.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: #1e3577;" text="Ranting" textFill="#fffbfb" />
+            <Button fx:id="topBooksButton" alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="173.0" mnemonicParsing="false" onAction="#onClickedTopBooksButton" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: #1e3577;" text="Top Books" textFill="#fffbfb" />
+            <Button fx:id="sortByDateButton" alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="102.0" mnemonicParsing="false" onAction="#onClickedDateButton" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: #1e3577;" text="Date" textFill="#fffbfb" />
+            <Button fx:id="sortByRantingButton" alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="77.0" mnemonicParsing="false" onAction="#onClickedRantingButton" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: #1e3577;" text="Ranting" textFill="#fffbfb" />
          </children></Pane>
-      <Pane prefHeight="33.0" prefWidth="650.0" style="-fx-background-color: #ffffff;">
+      <Pane prefHeight="33.0" prefWidth="670.0" style="-fx-background-color: #ffffff;">
          <children>
             <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="561.0" layoutY="2.0" pickOnBounds="true" smooth="false">
                <image>
@@ -41,7 +41,7 @@
                   <Image url="@../images/library_logo.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="25.0" fitWidth="32.0" layoutX="419.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="searchImage" fitHeight="25.0" fitWidth="32.0" layoutX="419.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/search.png" />
                </image>
@@ -49,13 +49,16 @@
             <TextField fx:id="titleBookText" layoutX="270.0" layoutY="4.0" prefHeight="25.0" prefWidth="149.0" />
             <Text fx:id="nickText" layoutX="444.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nick" textAlignment="RIGHT" wrappingWidth="108.390625" />
          </children></Pane>
-      <Pane layoutX="194.0" layoutY="33.0" prefHeight="367.0" prefWidth="406.0" style="-fx-background-color: f1f1f1;">
-         <children>
-            <VBox fx:id="emptyListBook" layoutY="-2.0" prefHeight="367.0" prefWidth="406.0">
+      <ScrollPane layoutX="194.0" layoutY="33.0" prefHeight="367.0" prefWidth="465.0" style="-fx-background-color: f1f1f1;">
+
+            <VBox fx:id="emptyListBook" layoutX="2.0" layoutY="3.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="358.0" prefWidth="454.0">
                <padding>
                   <Insets bottom="20.0" left="30.0" top="20.0" />
-               </padding></VBox>
-         </children>
-      </Pane>
+               </padding>
+               <opaqueInsets>
+                  <Insets bottom="10.0" top="10.0" />
+               </opaqueInsets></VBox>
+
+      </ScrollPane>
    </children>
 </Pane>

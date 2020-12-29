@@ -55,8 +55,7 @@ public class LoginController {
         } catch (IOException e1) {
             e1.printStackTrace();
         }
-        //wczesniej byl tworzony obiekt MainWidowController, gdzie pole nick jest puste (tworzy go dopiero fxml) dlatego wywalało nulla
-        MainWindowController controller=  loader.getController();  //new MainWindowController();
+        MainWindowController controller=  loader.getController();
         controller.setNick(loginLoginText.getText().toString());
         controller.setToken(token);
     }

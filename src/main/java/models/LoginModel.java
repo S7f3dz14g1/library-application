@@ -1,8 +1,11 @@
 package models;
 
 import api.ApiConfig;
+import api.LibraryBook;
 import controllers.LoginController;
 import helpers.StringHelper;
+
+import java.util.List;
 
 public class LoginModel {
 
@@ -26,4 +29,5 @@ public class LoginModel {
             }
         }
     }
+
 }

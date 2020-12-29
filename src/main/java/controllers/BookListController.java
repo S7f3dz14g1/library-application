@@ -1,12 +1,16 @@
 package controllers;
 
+import api.LibraryBook;
+import helpers.Button;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.layout.VBox;
+import models.BookListModel;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class BookListController implements Initializable {
@@ -14,22 +18,43 @@ public class BookListController implements Initializable {
     @FXML
     private VBox listItem;
 
+    private BookListModel model;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        model=new BookListModel(this);
+    }
 
-        Node[] node=new Node[5];//rozmiar listy 5
-
-        for (int i = 0; i <5; i++) {
-
+    public void setList(Button button){
+        List<LibraryBook> bookList=getBookList(button);
+        model.booksList();
+        Node[] node=new Node[bookList.size()];
+        for (int i = 0; i <bookList.size(); i++) {
+            FXMLLoader loader= new  FXMLLoader(this.getClass().getResource("/fxml/Item.fxml"));
             try {
-                node[i]= FXMLLoader.load(getClass().getResource("/fxml/Item.fxml"));
-                //add some effect
-
-                //add to list
-                listItem.getChildren().add(node[i]);
+                node[i]= loader.load();
             }catch (Exception e){
-
             }
+            ItemController itemController= loader.getController();
+            itemController.setAuthor(bookList.get(i).getAuthors());
+            itemController.setTitle(bookList.get(i).getTitle());
+            listItem.getChildren().add(node[i]);
         }
+    }
+
+    private List<LibraryBook> getBookList(Button button){
+        switch (button){
+            case Date:
+                return model.getBooksSortByDate();
+            case Tittle:
+                return model.getBooksSortByTitle();
+            case Ranting:
+                return model.getBooksSortByRanting();
+            case Discover:
+                return model.getBookByDiscover();
+            default:
+                return model.getTopBook();
+        }
+
     }
 }

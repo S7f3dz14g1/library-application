@@ -6,40 +6,46 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="372.0" style="-fx-background-radius: 20;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ItemController">
-   <children>
-      <ImageView fitHeight="90.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/old_book.PNG" />
-         </image></ImageView>
-      <VBox prefHeight="100.0" prefWidth="166.0">
-         <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tytuł" textAlignment="CENTER" wrappingWidth="178.13672256469727">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor" textAlignment="CENTER" wrappingWidth="175.501953125">
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </Text>
-         </children>
-      </VBox>
-      <VBox prefHeight="100.0" prefWidth="109.0">
-         <children>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="118.0" style="-fx-background-radius: 15;" text="Szczeguły" />
-            <Button mnemonicParsing="false" prefHeight="52.0" prefWidth="125.0" style="-fx-background-radius: 15;" text="Wyporzycz">
-               <VBox.margin>
-                  <Insets top="5.0" />
-               </VBox.margin></Button>
-         </children>
-         <HBox.margin>
-            <Insets bottom="5.0" />
-         </HBox.margin>
-      </VBox>
-   </children>
-   <padding>
-      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-   </padding>
-</HBox>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="124.0" prefWidth="372.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ItemController">
+   <HBox layoutY="6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="112.0" prefWidth="372.0" style="-fx-background-radius: 20; -fx-background-color: #80ff00;">
+      <children>
+         <ImageView fitHeight="90.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../images/old_book.PNG" />
+            </image></ImageView>
+         <VBox prefHeight="102.0" prefWidth="195.0">
+            <children>
+               <Text fx:id="titleBook" strokeType="OUTSIDE" strokeWidth="0.0" text="Tytuł" textAlignment="CENTER" wrappingWidth="178.13672256469727">
+                  <font>
+                     <Font size="10.0" />
+                  </font>
+               </Text>
+               <Text fx:id="authorBook" strokeType="OUTSIDE" strokeWidth="0.0" text="Autor" textAlignment="CENTER" wrappingWidth="177.50193786621094">
+                  <font>
+                     <Font size="13.0" />
+                  </font>
+               </Text>
+            </children>
+         </VBox>
+         <VBox prefHeight="98.0" prefWidth="113.0">
+            <children>
+               <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="118.0" style="-fx-background-radius: 15;" text="Szczeguły" />
+               <Button mnemonicParsing="false" prefHeight="52.0" prefWidth="125.0" style="-fx-background-radius: 15;" text="Wyporzycz">
+                  <VBox.margin>
+                     <Insets top="5.0" />
+                  </VBox.margin></Button>
+            </children>
+            <HBox.margin>
+               <Insets bottom="5.0" />
+            </HBox.margin>
+         </VBox>
+      </children>
+      <padding>
+         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+      </padding>
+      <opaqueInsets>
+         <Insets bottom="7.0" top="7.0" />
+      </opaqueInsets>
+   </HBox>
+
+</Pane>

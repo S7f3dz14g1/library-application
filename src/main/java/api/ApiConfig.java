@@ -1,5 +1,7 @@
 package api;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -7,6 +9,8 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 public class ApiConfig {
@@ -79,5 +83,26 @@ public class ApiConfig {
         }
 
         return null;
+    }
+
+    public List<LibraryBook> getBooks(String token) {
+        String HTTP_URL = "https://java-library-api.herokuapp.com/";
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(HTTP_URL + "api/library/books/500"))
+                .build();
+        HttpResponse<String> response = null;
+        try {
+            response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+            ObjectMapper mapper = new ObjectMapper();
+            List<LibraryBook> bookList = mapper.readValue(response.body(), new TypeReference<>() {
+            });
+
+            return bookList;
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+        return new ArrayList<LibraryBook>();
     }
 }
