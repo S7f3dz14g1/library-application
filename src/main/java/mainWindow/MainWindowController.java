@@ -6,13 +6,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
 
 public class MainWindowController {
-
 
     @FXML
     private VBox emptyListBook;
@@ -38,10 +38,10 @@ public class MainWindowController {
             e1.printStackTrace();
         }
         BookListController controller=loader.getController();
-        controller.setList(Button.TopBooks);
+        controller.setList(Button.TopBooks,null);
     }
 
-    private void setScreen(VBox pane) {
+    public void setScreen(VBox pane) {
         emptyListBook.getChildren().clear();
         emptyListBook.getChildren().add(pane);
     }
@@ -62,7 +62,7 @@ public class MainWindowController {
             e1.printStackTrace();
         }
         BookListController controller=loader.getController();
-        controller.setList(Button.Tittle);
+        controller.setList(Button.Tittle,null);
     }
 
     public void onClickedHistoryButton(ActionEvent actionEvent) {
@@ -81,7 +81,7 @@ public class MainWindowController {
             e1.printStackTrace();
         }
         BookListController controller=loader.getController();
-        controller.setList(Button.Discover);
+        controller.setList(Button.Discover,null);
     }
 
     public void onClickedTopBooksButton(ActionEvent actionEvent) {
@@ -92,7 +92,7 @@ public class MainWindowController {
             e1.printStackTrace();
         }
         BookListController controller=loader.getController();
-        controller.setList(Button.TopBooks);
+        controller.setList(Button.TopBooks,null);
     }
 
     public void onClickedDateButton(ActionEvent actionEvent) {
@@ -103,7 +103,7 @@ public class MainWindowController {
             e1.printStackTrace();
         }
         BookListController controller=loader.getController();
-        controller.setList(Button.Date);
+        controller.setList(Button.Date,null);
     }
 
     public void onClickedRantingButton(ActionEvent actionEvent) {
@@ -114,6 +114,17 @@ public class MainWindowController {
             e1.printStackTrace();
         }
         BookListController controller=loader.getController();
-        controller.setList(Button.Ranting);
+        controller.setList(Button.Ranting,null);
+    }
+
+    public void onClickedSearch(MouseEvent mouseEvent) {
+        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/BooksList.fxml"));
+        try {
+            setScreen(loader.load());
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+        BookListController controller=loader.getController();
+        controller.setList(Button.Search,titleBookText.getText().toString());
     }
 }

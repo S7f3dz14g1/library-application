@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox layoutX="2.0" layoutY="3.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="358.0" prefWidth="454.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookDetalist.BookDetailsController">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+         <VBox.margin>
+            <Insets left="165.0" />
+         </VBox.margin>
+         <image>
+            <Image url="@../images/old_book.PNG" />
+         </image>
+      </ImageView>
+      <HBox prefHeight="25.0" prefWidth="454.0">
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Title">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="75.0" right="29.0" top="5.0" />
+               </HBox.margin></Text>
+            <Text fx:id="titleBook" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="35.0" right="25.0" top="5.0" />
+               </HBox.margin></Text>
+         </children>
+      </HBox>
+      <HBox prefHeight="25.0" prefWidth="454.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Authors">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="75.0" right="11.0" top="5.0" />
+               </HBox.margin></Text>
+            <Text fx:id="authorsBook" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="35.0" right="25.0" top="5.0" />
+               </HBox.margin></Text>
+         </children>
+      </HBox>
+      <HBox prefHeight="25.0" prefWidth="454.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rating">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="75.0" right="19.0" top="5.0" />
+               </HBox.margin></Text>
+            <Text fx:id="ratingBook" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="35.0" right="25.0" top="5.0" />
+               </HBox.margin></Text>
+         </children>
+      </HBox>
+      <HBox prefHeight="25.0" prefWidth="454.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Popularity">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="75.0" top="5.0" />
+               </HBox.margin></Text>
+            <Text fx:id="popularityBook" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="35.0" right="25.0" top="5.0" />
+               </HBox.margin></Text>
+         </children>
+      </HBox>
+      <HBox prefHeight="25.0" prefWidth="454.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pages">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="75.0" right="22.0" top="5.0" />
+               </HBox.margin></Text>
+            <Text fx:id="pagesBook" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="35.0" right="25.0" top="5.0" />
+               </HBox.margin></Text>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+      <HBox prefHeight="25.0" prefWidth="454.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Year">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="75.0" right="31.0" top="5.0" />
+               </HBox.margin></Text>
+            <Text fx:id="yearBook" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="35.0" right="25.0" top="5.0" />
+               </HBox.margin></Text>
+         </children>
+      </HBox>
+      <HBox prefHeight="25.0" prefWidth="454.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Publisher">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="75.0" right="6.0" top="5.0" />
+               </HBox.margin></Text>
+            <Text fx:id="publisherBook" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="35.0" right="25.0" top="5.0" />
+               </HBox.margin></Text>
+         </children>
+      </HBox>
+      <Button mnemonicParsing="false" text="Back">
+         <VBox.margin>
+            <Insets left="180.0" />
+         </VBox.margin>
+      </Button>
+   </children>
+</VBox>

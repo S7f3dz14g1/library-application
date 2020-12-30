@@ -41,7 +41,7 @@
                   <Image url="@../images/library_logo.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="searchImage" fitHeight="25.0" fitWidth="32.0" layoutX="419.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="searchImage" fitHeight="25.0" fitWidth="32.0" layoutX="419.0" layoutY="4.0" onDragDetected="#onClickedSearch" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/search.png" />
                </image>

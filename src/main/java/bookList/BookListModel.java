@@ -30,16 +30,23 @@ public class BookListModel {
     }
 
     public List<LibraryBook> booksList(){
-        return apiConfig.getBooks(token);
+        return apiConfig.getBooks();
     }
 
     private void setBookList(){
-        bookList=apiConfig.getBooks(token);
+        bookList=apiConfig.getBooks();
     }
 
     public List<LibraryBook> getBooksSortByTitle(){
         bookList.sort(Comparator.comparing(LibraryBook::getTitle));
         return bookList;
+    }
+    public List<LibraryBook> getBooksByTitle(String title){
+        List<LibraryBook> books=new ArrayList<>();
+        for (LibraryBook book:bookList)
+            if(book.getTitle().equals(title))
+                books.add(book);
+        return books;
     }
 
     public List<LibraryBook>  getBooksSortByRanting(){
@@ -49,14 +56,6 @@ public class BookListModel {
     public List<LibraryBook>  getBooksSortByDate(){
         bookList.sort(Comparator.comparing(LibraryBook::getPublisher));
         return bookList;
-    }
-    public List<LibraryBook> getBookByTittle(String tittle){
-        List<LibraryBook> helper=new ArrayList<>();
-        for (LibraryBook book:bookList){
-            if (book.getTitle().equals(tittle))
-                helper.add(book);
-        }
-        return helper;
     }
 
     public LibraryBook getBookById(int id){

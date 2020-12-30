@@ -25,8 +25,8 @@ public class BookListController implements Initializable {
         model=new BookListModel(this);
     }
 
-    public void setList(Button button){
-        List<LibraryBook> bookList=getBookList(button);
+    public void setList(Button button,String title){
+        List<LibraryBook> bookList=getBookList(button,title);
         Node[] node=new Node[bookList.size()];
         for (int i = 0; i <bookList.size(); i++) {
             FXMLLoader loader= new  FXMLLoader(this.getClass().getResource("/fxml/Item.fxml"));
@@ -41,7 +41,7 @@ public class BookListController implements Initializable {
         }
     }
 
-    private List<LibraryBook> getBookList(Button button){
+    private List<LibraryBook> getBookList(Button button,String title){
         switch (button){
             case Date:
                 return model.getBooksSortByDate();
@@ -51,6 +51,14 @@ public class BookListController implements Initializable {
                 return model.getBooksSortByRanting();
             case Discover:
                 return model.getBookByDiscover();
+            case Search:
+                return model.getBooksByTitle(title);
+            //case History:
+          //      return null;
+          //  case Reading:
+          //      return null;
+            case TopBooks:
+                return model.getTopBook();
             default:
                 return model.getTopBook();
         }

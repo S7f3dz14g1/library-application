@@ -29,8 +29,8 @@
          </VBox>
          <VBox prefHeight="98.0" prefWidth="113.0">
             <children>
-               <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="118.0" style="-fx-background-radius: 15;" text="Szczeguły" />
-               <Button mnemonicParsing="false" prefHeight="52.0" prefWidth="125.0" style="-fx-background-radius: 15;" text="Wyporzycz">
+               <Button mnemonicParsing="false" onAction="#onClickedDetalis" prefHeight="50.0" prefWidth="118.0" style="-fx-background-radius: 10;" text="Details" />
+               <Button mnemonicParsing="false" prefHeight="52.0" prefWidth="125.0" style="-fx-background-radius: 10;" text="Borrow">
                   <VBox.margin>
                      <Insets top="5.0" />
                   </VBox.margin></Button>

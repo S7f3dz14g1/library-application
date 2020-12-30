@@ -86,7 +86,7 @@ public class ApiConfig {
         return null;
     }
 
-    public List<LibraryBook> getBooks(String token) {
+    public List<LibraryBook> getBooks() {
 
         String HTTP_URL = "https://java-library-api.herokuapp.com/";
         HttpClient client = HttpClient.newHttpClient();

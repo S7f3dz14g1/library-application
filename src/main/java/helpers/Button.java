@@ -7,5 +7,6 @@ public enum Button {
     TopBooks,
     Discover,
     Reading,
-    History
+    History,
+    Search
 }

@@ -23,6 +23,6 @@ public class MainWindowModel {
     }
 
     public List<LibraryBook>booksList(){
-        return apiConfig.getBooks(token);
+        return apiConfig.getBooks();
     }
 }
