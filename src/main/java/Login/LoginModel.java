@@ -1,11 +1,8 @@
-package models;
+package Login;
 
 import api.ApiConfig;
-import api.LibraryBook;
-import controllers.LoginController;
 import helpers.StringHelper;
-
-import java.util.List;
+import models.User;
 
 public class LoginModel {
 
@@ -19,13 +16,12 @@ public class LoginModel {
 
     public void   login(User user){
         if(!StringHelper.validatePasswordLogin(user.getPassword())||!StringHelper.validateNickLogin(user.getName())){
-            controller.showMessage("Dane niepoprawne");
+            controller.showMessage("Incorrect data");
         }else{
             try{
                 controller.openMainWindow(apiConfig.login(user.getName(),user.getPassword()));
             }catch (Exception e){
-                System.out.println(e.getMessage());
-                controller.showMessage("Błędne dane");
+                controller.showMessage("Incorrect data");
             }
         }
     }

@@ -1,12 +1,13 @@
-package controllers;
+package Login;
 
+import mainWindow.MainWindowController;
+import registration.RegistrationController;
 import informationBox.InformationBox;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
-import models.LoginModel;
 import models.User;
 
 import java.io.IOException;

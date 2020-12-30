@@ -1,13 +1,13 @@
-package controllers;
+package registration;
 
+import Login.LoginController;
 import informationBox.InformationBox;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
-import models.RegistrationModel;
-import models.User;
+import mainWindow.MainWindowController;
 
 import java.io.IOException;
 
@@ -16,13 +16,6 @@ public class RegistrationController {
     private LoginController loginController;
 
     private RegistrationModel registrationModel;
-
-    public RegistrationController(RegistrationModel registrationModel) {
-        this.registrationModel = registrationModel;
-    }
-
-    public RegistrationController() {
-    }
 
     @FXML
     private TextField loginText;

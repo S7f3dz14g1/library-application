@@ -4,6 +4,6 @@
 
 
 
-      <VBox fx:id="listItem"  prefHeight="358.0" prefWidth="454.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.BookListController" />
+      <VBox fx:id="listItem"  prefHeight="358.0" prefWidth="454.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookList.BookListController" />
 
 

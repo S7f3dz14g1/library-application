@@ -2,6 +2,7 @@ package api;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import models.LibraryBook;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -33,7 +34,7 @@ public class ApiConfig {
         try {
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
-            if (response.statusCode() == 200) { // status code 200 oznacza, że zapytanie się udało
+            if (response.statusCode() == 200) {
                 return response.body();
             } else if (response.statusCode() == 409) {
                 throw new Exception("dany username lub email już istnieje");
@@ -86,12 +87,14 @@ public class ApiConfig {
     }
 
     public List<LibraryBook> getBooks(String token) {
+
         String HTTP_URL = "https://java-library-api.herokuapp.com/";
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(HTTP_URL + "api/library/books/500"))
                 .build();
         HttpResponse<String> response = null;
+
         try {
             response = client.send(request, HttpResponse.BodyHandlers.ofString());
 

@@ -1,5 +1,6 @@
-package controllers;
+package mainWindow;
 
+import bookList.BookListController;
 import helpers.Button;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -7,7 +8,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
-import models.MainWindowModel;
 
 import java.io.IOException;
 
@@ -25,11 +25,8 @@ public class MainWindowController {
 
     private MainWindowModel model;
 
-    public MainWindowController(){
-        model=new MainWindowModel(this);
-    }
-
     public void initialize() {
+        model=new MainWindowModel(this);
         setList();
     }
 

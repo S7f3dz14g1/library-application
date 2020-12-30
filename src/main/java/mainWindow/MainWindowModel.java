@@ -1,8 +1,7 @@
-package models;
+package mainWindow;
 
 import api.ApiConfig;
-import api.LibraryBook;
-import controllers.MainWindowController;
+import models.LibraryBook;
 
 import java.util.List;
 

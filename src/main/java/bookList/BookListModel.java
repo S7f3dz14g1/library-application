@@ -1,8 +1,7 @@
-package models;
+package bookList;
 
 import api.ApiConfig;
-import api.LibraryBook;
-import controllers.BookListController;
+import models.LibraryBook;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -81,7 +80,6 @@ public class BookListModel {
     public List<LibraryBook> getTopBook(){
         List<LibraryBook> helper=new ArrayList<>();
         bookList.sort(Comparator.comparing(LibraryBook::getRating));
-
         for (LibraryBook book:bookList){
             helper.add(book);
             if (helper.size()==10)break;

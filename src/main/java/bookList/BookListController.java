@@ -1,13 +1,13 @@
-package controllers;
+package bookList;
 
-import api.LibraryBook;
+import models.LibraryBook;
+import item.ItemController;
 import helpers.Button;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.layout.VBox;
-import models.BookListModel;
 
 import java.net.URL;
 import java.util.List;
@@ -27,7 +27,6 @@ public class BookListController implements Initializable {
 
     public void setList(Button button){
         List<LibraryBook> bookList=getBookList(button);
-        model.booksList();
         Node[] node=new Node[bookList.size()];
         for (int i = 0; i <bookList.size(); i++) {
             FXMLLoader loader= new  FXMLLoader(this.getClass().getResource("/fxml/Item.fxml"));
