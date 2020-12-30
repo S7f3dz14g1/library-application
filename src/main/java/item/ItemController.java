@@ -7,6 +7,7 @@ import helpers.Button;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import mainWindow.MainWindowController;
 
@@ -19,7 +20,7 @@ public class ItemController {
 
     @FXML
     private Text authorBook;
-
+    private VBox parent;
     public void setTitle(String title){
         titleBook.setText(title);
     }
@@ -29,22 +30,22 @@ public class ItemController {
     }
 
     public void onClickedDetalis(ActionEvent actionEvent) {
-        FXMLLoader loaderMainWindow = new FXMLLoader(this.getClass().getResource("/fxml/MainWindow.fxml"));
         FXMLLoader loaderBookDetails = new FXMLLoader(this.getClass().getResource("/fxml/BookDetails.fxml"));
         try {
-            loaderMainWindow.load();
-        } catch (IOException e1) {
-            e1.printStackTrace();
-        }
-        MainWindowController controllerMain=loaderMainWindow.getController();
-
-        try {
-            controllerMain.setScreen(loaderBookDetails.load());
+            setScreen(loaderBookDetails.load()); // jak zwykle czyszczenie zawartości rodzina i wrzucenie nowej zawartosci
         } catch (IOException e1) {
             e1.printStackTrace();
         }
         BookDetailsController controllerBook=loaderBookDetails.getController();
         controllerBook.setBookDetalist(titleBook.getText());
+    }
 
+    public void setParent(VBox parent) {
+        this.parent = parent;
+    }
+
+    public void setScreen(VBox pane) {
+        parent.getChildren().clear();
+        parent.getChildren().add(pane);
     }
 }

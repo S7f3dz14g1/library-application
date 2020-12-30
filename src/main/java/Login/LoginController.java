@@ -56,6 +56,7 @@ public class LoginController {
         } catch (IOException e1) {
             e1.printStackTrace();
         }
+
         MainWindowController controller=  loader.getController();
         controller.setNick(loginLoginText.getText().toString());
         controller.setToken(token);

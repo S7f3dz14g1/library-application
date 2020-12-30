@@ -19,6 +19,7 @@ public class BookListController implements Initializable {
     private VBox listItem;
 
     private BookListModel model;
+    private VBox parent;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -37,6 +38,9 @@ public class BookListController implements Initializable {
             ItemController itemController= loader.getController();
             itemController.setAuthor(bookList.get(i).getAuthors());
             itemController.setTitle(bookList.get(i).getTitle());
+
+            /// do każdego elementu dodaj referencje do panelu rodzina - (ważne aby ustawić panel przed wywołaniem metody 'setList' bo pole 'parent' bedzie null)
+            itemController.setParent(parent);
             listItem.getChildren().add(node[i]);
         }
     }
@@ -63,5 +67,10 @@ public class BookListController implements Initializable {
                 return model.getTopBook();
         }
 
+    }
+
+
+    public void setPane(VBox box) {
+        parent = box;
     }
 }

@@ -38,6 +38,8 @@ public class MainWindowController {
             e1.printStackTrace();
         }
         BookListController controller=loader.getController();
+        // przed stworzeniem listy dodaj referencje do panelu gdzie bedzie wyświetlony 'bookDetails'
+        controller.setPane(emptyListBook);
         controller.setList(Button.TopBooks,null);
     }
 
