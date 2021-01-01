@@ -4,6 +4,7 @@ import informationBox.InformationBox;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
@@ -12,6 +13,8 @@ import java.util.ResourceBundle;
 
 public class ReadingBookController implements Initializable {
 
+    @FXML
+    private Pane Book;
     @FXML
     private Text idBook;
 
@@ -35,6 +38,7 @@ public class ReadingBookController implements Initializable {
 
     public void onClickedReturn(MouseEvent mouseEvent) {
             model.returnBook(bookCopyId.getText());
+            parent.getChildren().remove(Book);
     }
 
     public void showInformationWindow(){
