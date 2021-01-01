@@ -2,15 +2,13 @@ package bookList;
 
 import api.ApiConfig;
 import models.LibraryBook;
+import models.UserHistory;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-
 public class BookListModel {
-
-    private String token;
 
     private BookListController controller;
 
@@ -18,15 +16,20 @@ public class BookListModel {
 
     private List<LibraryBook> bookList;
 
+    private String token;
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
 
     public BookListModel(BookListController controller){
         this.controller=controller;
         apiConfig=new ApiConfig();
         setBookList();
-    }
-
-    public void setToken(String token) {
-        this.token = token;
     }
 
     public List<LibraryBook> booksList(){
@@ -44,7 +47,7 @@ public class BookListModel {
     public List<LibraryBook> getBooksByTitle(String title){
         List<LibraryBook> books=new ArrayList<>();
         for (LibraryBook book:bookList)
-            if(book.getTitle().equals(title))
+            if(book.getTitle().startsWith(title))
                 books.add(book);
         return books;
     }
@@ -98,6 +101,15 @@ public class BookListModel {
                 copies++;
         }
         return copies;
+    }
+
+    public List<UserHistory> getUserHistory(String token){
+        return apiConfig.getHistoryBookList(token);
+    }
+
+    public List<UserHistory> getReadingBooks(String token){
+
+        return apiConfig.getReadingBookList(token);
     }
 }
 

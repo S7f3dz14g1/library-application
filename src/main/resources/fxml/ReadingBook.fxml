@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="74.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="readingBook.ReadingBookController">
+    <HBox layoutY="6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="440.0" style="-fx-background-radius: 8; -fx-background-color: #80aa00;">
+      <children>
+         <Text fx:id="idBook" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="65.13672065734863">
+            <HBox.margin>
+               <Insets left="10.0" top="22.0" />
+            </HBox.margin>
+         </Text>
+         <VBox prefHeight="63.0" prefWidth="235.0">
+            <children>
+               <Text fx:id="bookCopyId" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                  <VBox.margin>
+                     <Insets bottom="2.0" top="2.0" />
+                  </VBox.margin></Text>
+               <Text fx:id="titleBook" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                  <VBox.margin>
+                     <Insets bottom="2.0" top="1.0" />
+                  </VBox.margin></Text>
+               <Text fx:id="borrowDate" strokeType="OUTSIDE" strokeWidth="0.0" text="borrowDate">
+                  <VBox.margin>
+                     <Insets bottom="2.0" top="1.0" />
+                  </VBox.margin>
+               </Text>
+            </children>
+         </VBox>
+         <Button fx:id="returnBook" mnemonicParsing="false" onMouseClicked="#onClickedReturn" prefHeight="26.0" prefWidth="117.0" text="Return">
+            <HBox.margin>
+               <Insets top="15.0" />
+            </HBox.margin>
+         </Button>
+      </children></HBox>
+
+</Pane>

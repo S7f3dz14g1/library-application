@@ -25,4 +25,8 @@ public class MainWindowModel {
     public List<LibraryBook>booksList(){
         return apiConfig.getBooks();
     }
+
+    public String getToken(){
+        return token;
+    }
 }

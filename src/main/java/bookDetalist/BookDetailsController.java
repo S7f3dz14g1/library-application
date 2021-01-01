@@ -1,6 +1,9 @@
 package bookDetalist;
 
+import bookList.BookListController;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import models.LibraryBook;
 
@@ -29,6 +32,10 @@ public class BookDetailsController {
 
     private BookDetailsModel model;
 
+    private VBox parent;
+
+    private VBox bookList;
+
     public void initialize() {
         model=new BookDetailsModel(this);
     }
@@ -43,4 +50,18 @@ public class BookDetailsController {
         yearBook.setText(libraryBook.getYear()+"");
         publisherBook.setText(libraryBook.getPublisher());
     }
+
+    public void onClickedBack(ActionEvent actionEvent) {
+        parent.getChildren().clear();
+        parent.getChildren().add(bookList);
+    }
+
+    public void setParent(VBox parent) {
+        this.parent = parent;
+    }
+
+    public void setBookList(VBox bookList) {
+        this.bookList = bookList;
+    }
+
 }

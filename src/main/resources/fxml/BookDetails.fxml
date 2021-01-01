@@ -106,7 +106,7 @@
                </HBox.margin></Text>
          </children>
       </HBox>
-      <Button mnemonicParsing="false" text="Back">
+      <Button mnemonicParsing="false" onAction="#onClickedBack" text="Back">
          <VBox.margin>
             <Insets left="180.0" />
          </VBox.margin>

@@ -2,7 +2,6 @@ package mainWindow;
 
 import bookList.BookListController;
 import helpers.Button;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextField;
@@ -27,10 +26,10 @@ public class MainWindowController {
 
     public void initialize() {
         model=new MainWindowModel(this);
-        setList();
+
     }
 
-    private void setList(){
+    public void setList(){
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/BooksList.fxml"));
         try {
             setScreen(loader.load());
@@ -38,8 +37,8 @@ public class MainWindowController {
             e1.printStackTrace();
         }
         BookListController controller=loader.getController();
-        // przed stworzeniem listy dodaj referencje do panelu gdzie bedzie wyświetlony 'bookDetails'
         controller.setPane(emptyListBook);
+        controller.setToken(model.getToken());
         controller.setList(Button.TopBooks,null);
     }
 
@@ -56,77 +55,69 @@ public class MainWindowController {
         model.setToken(token);
     }
 
-    public void onClickedTitleButton(ActionEvent actionEvent) {
-        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/BooksList.fxml"));
-        try {
-            setScreen(loader.load());
-        } catch (IOException e1) {
-            e1.printStackTrace();
-        }
-        BookListController controller=loader.getController();
+    public void onClickedTitleButton(MouseEvent actionEvent) {
+        BookListController controller= getBookListControlerLoader();
+        controller.setPane(emptyListBook);
+        controller.setToken(model.getToken());
         controller.setList(Button.Tittle,null);
     }
 
-    public void onClickedHistoryButton(ActionEvent actionEvent) {
-        //wyświetlenie histori przeczytanych książke
+    public void onClickedHistoryButton(MouseEvent actionEvent) {
+        BookListController controller=getBookListControlerLoader();
+        controller.setPane(emptyListBook);
+        controller.setToken(model.getToken());
+        controller.setHistoryBook(model.getToken());
     }
 
-    public void onClickedReadingButton(ActionEvent actionEvent) {
-        //wyśiwetlenie książek po rankingu
+    public void onClickedReadingButton(MouseEvent actionEvent) {
+        BookListController controller=getBookListControlerLoader();
+        controller.setPane(emptyListBook);
+        controller.setToken(model.getToken());
+        controller.setReadingBook(model.getToken());
     }
 
-    public void onClickedDiscoverButton(ActionEvent actionEvent) {
-        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/BooksList.fxml"));
-        try {
-            setScreen(loader.load());
-        } catch (IOException e1) {
-            e1.printStackTrace();
-        }
-        BookListController controller=loader.getController();
+    public void onClickedDiscoverButton(MouseEvent actionEvent) {
+        BookListController controller= getBookListControlerLoader();
+        controller.setPane(emptyListBook);
+        controller.setToken(model.getToken());
         controller.setList(Button.Discover,null);
     }
 
-    public void onClickedTopBooksButton(ActionEvent actionEvent) {
-        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/BooksList.fxml"));
-        try {
-            setScreen(loader.load());
-        } catch (IOException e1) {
-            e1.printStackTrace();
-        }
-        BookListController controller=loader.getController();
+    public void onClickedTopBooksButton(MouseEvent actionEvent) {
+        BookListController controller= getBookListControlerLoader();
+        controller.setPane(emptyListBook);
+        controller.setToken(model.getToken());
         controller.setList(Button.TopBooks,null);
     }
 
-    public void onClickedDateButton(ActionEvent actionEvent) {
-        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/BooksList.fxml"));
-        try {
-            setScreen(loader.load());
-        } catch (IOException e1) {
-            e1.printStackTrace();
-        }
-        BookListController controller=loader.getController();
+    public void onClickedDateButton(MouseEvent actionEvent) {
+        BookListController controller= getBookListControlerLoader();
+        controller.setPane(emptyListBook);
+        controller.setToken(model.getToken());
         controller.setList(Button.Date,null);
     }
 
-    public void onClickedRantingButton(ActionEvent actionEvent) {
-        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/BooksList.fxml"));
-        try {
-            setScreen(loader.load());
-        } catch (IOException e1) {
-            e1.printStackTrace();
-        }
-        BookListController controller=loader.getController();
+    public void onClickedRantingButton(MouseEvent actionEvent) {
+        BookListController controller= getBookListControlerLoader();
+        controller.setPane(emptyListBook);
+        controller.setToken(model.getToken());
         controller.setList(Button.Ranting,null);
     }
 
     public void onClickedSearch(MouseEvent mouseEvent) {
+        BookListController controller= getBookListControlerLoader();
+        controller.setPane(emptyListBook);
+        controller.setToken(model.getToken());
+        controller.setList(Button.Search,titleBookText.getText().toString());
+    }
+
+    private BookListController getBookListControlerLoader(){
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/BooksList.fxml"));
         try {
             setScreen(loader.load());
         } catch (IOException e1) {
             e1.printStackTrace();
         }
-        BookListController controller=loader.getController();
-        controller.setList(Button.Search,titleBookText.getText().toString());
+        return loader.getController();
     }
 }

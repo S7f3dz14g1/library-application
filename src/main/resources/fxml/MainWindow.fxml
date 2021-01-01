@@ -14,21 +14,21 @@
                <font>
                   <Font size="18.0" />
                </font></Text>
-            <Button fx:id="sortByTitleButton" alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="52.0" mnemonicParsing="false" onAction="#onClickedTitleButton" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: #1e3577;" text="Title" textFill="#fffbfb" />
-            <Button fx:id="historyButton" alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="290.0" mnemonicParsing="false" onAction="#onClickedHistoryButton" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: #1e3577;" text="History" textFill="#fffbfb" />
+            <Button fx:id="sortByTitleButton" alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="52.0" mnemonicParsing="false" onMouseClicked="#onClickedTitleButton" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: #1e3577;" text="Title" textFill="#fffbfb" />
+            <Button fx:id="historyButton" alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="290.0" mnemonicParsing="false" onMouseClicked="#onClickedHistoryButton" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: #1e3577;" text="History" textFill="#fffbfb" />
          <Text fill="#f0e5e5" layoutX="14.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your books" wrappingWidth="158.00000036548226">
                <font>
                   <Font size="18.0" />
                </font></Text>
-            <Button fx:id="readingButton" alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="265.0" mnemonicParsing="false" onAction="#onClickedReadingButton" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: #1e3577;" text="Reading" textFill="#fffbfb" />
-            <Button fx:id="discoverButton" alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="198.0" mnemonicParsing="false" onAction="#onClickedDiscoverButton" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: #1e3577;" text="Discover" textFill="#fffbfb" />
+            <Button fx:id="readingButton" alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="265.0" mnemonicParsing="false" onMouseClicked="#onClickedReadingButton" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: #1e3577;" text="Reading" textFill="#fffbfb" />
+            <Button fx:id="discoverButton" alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="198.0" mnemonicParsing="false" onMouseClicked="#onClickedDiscoverButton" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: #1e3577;" text="Discover" textFill="#fffbfb" />
          <Text fill="#f0e5e5" layoutX="14.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Browase" wrappingWidth="158.00000036548226">
                <font>
                   <Font size="18.0" />
                </font></Text>
-            <Button fx:id="topBooksButton" alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="173.0" mnemonicParsing="false" onAction="#onClickedTopBooksButton" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: #1e3577;" text="Top Books" textFill="#fffbfb" />
-            <Button fx:id="sortByDateButton" alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="102.0" mnemonicParsing="false" onAction="#onClickedDateButton" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: #1e3577;" text="Date" textFill="#fffbfb" />
-            <Button fx:id="sortByRantingButton" alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="77.0" mnemonicParsing="false" onAction="#onClickedRantingButton" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: #1e3577;" text="Ranting" textFill="#fffbfb" />
+            <Button fx:id="topBooksButton" alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="173.0" mnemonicParsing="false" onMouseClicked="#onClickedTopBooksButton" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: #1e3577;" text="Top Books" textFill="#fffbfb" />
+            <Button fx:id="sortByDateButton" alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="102.0" mnemonicParsing="false" onMouseClicked="#onClickedDateButton" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: #1e3577;" text="Date" textFill="#fffbfb" />
+            <Button fx:id="sortByRantingButton" alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="77.0" mnemonicParsing="false" onMouseClicked="#onClickedRantingButton" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: #1e3577;" text="Ranting" textFill="#fffbfb" />
          </children></Pane>
       <Pane prefHeight="33.0" prefWidth="670.0" style="-fx-background-color: #ffffff;">
          <children>
@@ -41,7 +41,7 @@
                   <Image url="@../images/library_logo.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="searchImage" fitHeight="25.0" fitWidth="32.0" layoutX="419.0" layoutY="4.0" onDragDetected="#onClickedSearch" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="searchImage" fitHeight="25.0" fitWidth="32.0" layoutX="419.0" layoutY="4.0" onMouseClicked="#onClickedSearch" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/search.png" />
                </image>

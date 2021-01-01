@@ -39,7 +39,7 @@ public class LoginController {
             e1.printStackTrace();
         }
         RegistrationController controllerMain = loader.getController();
-        controllerMain.setLoginController(LoginController.this);
+        controllerMain.setParent(LoginController.this);
         setScreen(pane);
     }
 
@@ -60,6 +60,7 @@ public class LoginController {
         MainWindowController controller=  loader.getController();
         controller.setNick(loginLoginText.getText().toString());
         controller.setToken(token);
+        controller.setList();
     }
 
     public void showMessage(String message) {

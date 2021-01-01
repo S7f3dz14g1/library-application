@@ -9,6 +9,7 @@ public class UserHistory {
     private final UUID userId;
     private final String title;
     private final int bookCopyId;
+    private final int bookId;
     private final Date borrowDate;
     private final Date returnedDate;
 
@@ -16,12 +17,14 @@ public class UserHistory {
                        @JsonProperty("title") String title,
                        @JsonProperty("bookCopyId") int bookCopyId,
                        @JsonProperty("borrowDate") Date borrowDate,
-                       @JsonProperty("returnedDate") Date returnedDate) {
+                       @JsonProperty("returnedDate") Date returnedDate,
+                       @JsonProperty("bookId") int bookId) {
         this.userId = userId;
         this.title = title;
         this.bookCopyId = bookCopyId;
         this.borrowDate = borrowDate;
         this.returnedDate = returnedDate;
+        this.bookId=bookId;
     }
 
     public UUID getUserId() {

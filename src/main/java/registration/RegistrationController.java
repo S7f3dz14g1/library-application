@@ -13,7 +13,7 @@ import java.io.IOException;
 
 public class RegistrationController {
 
-    private LoginController loginController;
+    private LoginController parent;
 
     private RegistrationModel registrationModel;
 
@@ -38,7 +38,7 @@ public class RegistrationController {
         } catch (IOException e1) {
             e1.printStackTrace();
         }
-        loginController.setScreen(pane);
+        parent.setScreen(pane);
     }
 
     @FXML
@@ -55,23 +55,24 @@ public class RegistrationController {
         registrationModel = new RegistrationModel(this);
     }
 
-    public void setLoginController(LoginController loginController) {
-        this.loginController=loginController;
+    public void setParent(LoginController parent) {
+        this.parent = parent;
     }
 
     public void alertWindow(String message){
         InformationBox.infoBox(message);
     }
 
-    public void openMainWindow(String taken, String nick) {
+    public void openMainWindow(String token, String nick) {
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/MainWindow.fxml"));
         try {
-            loginController.setScreen(loader.load());
+            parent.setScreen(loader.load());
         } catch (IOException e1) {
             e1.printStackTrace();
         }
         MainWindowController mainWindowController=loader.getController();
-        mainWindowController.setToken(taken);
+        mainWindowController.setToken(token);
+        mainWindowController.setList();
         mainWindowController.setNick(nick);
     }
 }
