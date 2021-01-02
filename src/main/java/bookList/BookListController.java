@@ -32,7 +32,9 @@ public class BookListController implements Initializable {
         List<LibraryBook> bookList=getBookList(button,title);
         Node[] node=new Node[bookList.size()];
         for (int i = 0; i <bookList.size(); i++) {
-            FXMLLoader loader= new  FXMLLoader(this.getClass().getResource("/fxml/Item.fxml"));
+            if(model.getBooksCopies(bookList.get(i).getId())!=0) {
+            }
+                FXMLLoader loader= new  FXMLLoader(this.getClass().getResource("/fxml/Item.fxml"));
             try {
                 node[i]= loader.load();
             }catch (Exception e){
@@ -52,18 +54,19 @@ public class BookListController implements Initializable {
         List<UserHistory> bookList=model.getUserHistory(token);
         Node[] node=new Node[bookList.size()];
         for (int i = 0; i <bookList.size(); i++) {
-            FXMLLoader loader= new  FXMLLoader(this.getClass().getResource("/fxml/HistoryBook.fxml"));
-            try {
-                node[i]= loader.load();
-            }catch (Exception e){
-            }
-            HistoryBookController historyBookController= loader.getController();
-            historyBookController.setBookCopyId(bookList.get(i).getBookCopyId()+"");
-            historyBookController.setBorrowDate(bookList.get(i).getBorrowDate().toString());
-            historyBookController.setTitleBook(bookList.get(i).getTitle());
-            historyBookController.setIdBook(bookList.get(i).getUserId().toString());
-          //  historyBookController.setReturnedDate(bookList.get(i).getReturnedDate().toString());
-            listItem.getChildren().add(node[i]);
+                FXMLLoader loader= new  FXMLLoader(this.getClass().getResource("/fxml/HistoryBook.fxml"));
+                try {
+                    node[i]= loader.load();
+                }catch (Exception e){
+                }
+                HistoryBookController historyBookController= loader.getController();
+                historyBookController.setBookCopyId(bookList.get(i).getBookCopyId()+"");
+                historyBookController.setTitleBook(bookList.get(i).getTitle());
+                historyBookController.setIdBook(i+1+"");
+                historyBookController.setReturnedDate(bookList.get(i).getReturnedDate().toString());
+                historyBookController.setBorrowDate(bookList.get(i).getBorrowDate().toString());
+                listItem.getChildren().add(node[i]);
+
         }
     }
 
@@ -71,19 +74,20 @@ public class BookListController implements Initializable {
         List<UserHistory> bookList=model.getReadingBooks(token);
         Node[] node=new Node[bookList.size()];
         for (int i = 0; i <bookList.size(); i++) {
-            FXMLLoader loader= new  FXMLLoader(this.getClass().getResource("/fxml/ReadingBook.fxml"));
-            try {
-                node[i]= loader.load();
-            }catch (Exception e){
-            }
-            ReadingBookController readingBookController = loader.getController();
-            readingBookController.setBookCopyId(bookList.get(i).getBookCopyId()+"");
-            readingBookController.setBorrowDate(bookList.get(i).getBorrowDate().toString());
-            readingBookController.setIdBook(bookList.get(i).getBookCopyId()+"");
-            readingBookController.setParent(listItem);
-            readingBookController.setToken(model.getToken());
-            readingBookController.setTitleBook(bookList.get(i).getTitle());
-            listItem.getChildren().add(node[i]);
+                FXMLLoader loader= new  FXMLLoader(this.getClass().getResource("/fxml/ReadingBook.fxml"));
+                try {
+                    node[i]= loader.load();
+                }catch (Exception e){
+                }
+                ReadingBookController readingBookController = loader.getController();
+                readingBookController.setBookCopyId(bookList.get(i).getBookCopyId()+"");
+                readingBookController.setBorrowDate(bookList.get(i).getBorrowDate().toString());
+                readingBookController.setIdBook(bookList.get(i).getBookCopyId()+"");
+                readingBookController.setParent(listItem);
+                readingBookController.setToken(model.getToken());
+                readingBookController.setTitleBook(bookList.get(i).getTitle());
+                listItem.getChildren().add(node[i]);
+
         }
     }
 

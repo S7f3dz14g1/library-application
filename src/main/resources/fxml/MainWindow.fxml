@@ -6,33 +6,33 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane prefHeight="400.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainWindow.MainWindowController">
+<Pane prefHeight="400.0" prefWidth="670.0" style="-fx-background-color:#f1f1f1 ;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainWindow.MainWindowController" >
    <children>
-      <Pane layoutY="39.0" prefHeight="358.0" prefWidth="194.0" style="-fx-background-color: #1e3577; -fx-background-radius: 10;">
+      <Pane layoutY="34.0" prefHeight="370.0" prefWidth="194.0" style="-fx-background-color: linear-gradient(from 34.0px 34.0px to 370.0px 370.0px, #0C8D54, #1E3557);">
          <children>
             <Text fill="#f0e5e5" layoutX="14.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sort" wrappingWidth="158.00000036548226">
                <font>
                   <Font size="18.0" />
                </font></Text>
-            <Button fx:id="sortByTitleButton" alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="52.0" mnemonicParsing="false" onMouseClicked="#onClickedTitleButton" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: #1e3577;" text="Title" textFill="#fffbfb" />
-            <Button fx:id="historyButton" alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="290.0" mnemonicParsing="false" onMouseClicked="#onClickedHistoryButton" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: #1e3577;" text="History" textFill="#fffbfb" />
+            <Button fx:id="sortByTitleButton" alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="52.0" mnemonicParsing="false" onMouseClicked="#onClickedTitleButton" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: transparent;;" text="Title" textFill="#fffbfb" />
+            <Button fx:id="historyButton" alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="290.0" mnemonicParsing="false" onMouseClicked="#onClickedHistoryButton" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: transparent;;" text="History" textFill="#fffbfb" />
          <Text fill="#f0e5e5" layoutX="14.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your books" wrappingWidth="158.00000036548226">
                <font>
                   <Font size="18.0" />
                </font></Text>
-            <Button fx:id="readingButton" alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="265.0" mnemonicParsing="false" onMouseClicked="#onClickedReadingButton" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: #1e3577;" text="Reading" textFill="#fffbfb" />
-            <Button fx:id="discoverButton" alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="198.0" mnemonicParsing="false" onMouseClicked="#onClickedDiscoverButton" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: #1e3577;" text="Discover" textFill="#fffbfb" />
+            <Button fx:id="readingButton" alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="265.0" mnemonicParsing="false" onMouseClicked="#onClickedReadingButton" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: transparent;;" text="Reading" textFill="#fffbfb" />
+            <Button fx:id="discoverButton" alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="198.0" mnemonicParsing="false" onMouseClicked="#onClickedDiscoverButton" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: transparent;;" text="Discover" textFill="#fffbfb" />
          <Text fill="#f0e5e5" layoutX="14.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Browase" wrappingWidth="158.00000036548226">
                <font>
                   <Font size="18.0" />
                </font></Text>
-            <Button fx:id="topBooksButton" alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="173.0" mnemonicParsing="false" onMouseClicked="#onClickedTopBooksButton" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: #1e3577;" text="Top Books" textFill="#fffbfb" />
-            <Button fx:id="sortByDateButton" alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="102.0" mnemonicParsing="false" onMouseClicked="#onClickedDateButton" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: #1e3577;" text="Date" textFill="#fffbfb" />
-            <Button fx:id="sortByRantingButton" alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="77.0" mnemonicParsing="false" onMouseClicked="#onClickedRantingButton" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: #1e3577;" text="Ranting" textFill="#fffbfb" />
+            <Button fx:id="topBooksButton" alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="173.0" mnemonicParsing="false" onMouseClicked="#onClickedTopBooksButton" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: transparent;;" text="Top Books" textFill="#fffbfb" />
+            <Button fx:id="sortByDateButton" alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="102.0" mnemonicParsing="false" onMouseClicked="#onClickedDateButton" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: transparent;;" text="Date" textFill="#fffbfb" />
+            <Button fx:id="sortByRantingButton" alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="77.0" mnemonicParsing="false" onMouseClicked="#onClickedRantingButton" prefHeight="25.0" prefWidth="178.0" style="-fx-background-color: transparent;;" text="Ranting" textFill="#fffbfb" />
          </children></Pane>
       <Pane prefHeight="33.0" prefWidth="670.0" style="-fx-background-color: #ffffff;">
          <children>
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="561.0" layoutY="2.0" pickOnBounds="true" smooth="false">
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="631.0" layoutY="4.0" pickOnBounds="true" smooth="false">
                <image>
                   <Image url="@../images/user_icon.png" />
                </image></ImageView>
@@ -47,7 +47,10 @@
                </image>
             </ImageView>
             <TextField fx:id="titleBookText" layoutX="270.0" layoutY="4.0" prefHeight="25.0" prefWidth="149.0" />
-            <Text fx:id="nickText" layoutX="444.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nick" textAlignment="RIGHT" wrappingWidth="108.390625" />
+            <Text fx:id="nickText" layoutX="511.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nick" textAlignment="RIGHT" wrappingWidth="108.390625">
+               <font>
+                  <Font size="18.0" />
+               </font></Text>
          </children></Pane>
       <ScrollPane layoutX="194.0" layoutY="33.0" prefHeight="367.0" prefWidth="465.0" style="-fx-background-color: f1f1f1;">
 

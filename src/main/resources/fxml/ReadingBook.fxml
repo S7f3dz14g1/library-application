@@ -5,8 +5,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane fx:id="Book" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="74.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="readingBook.ReadingBookController">
-    <HBox layoutY="6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="440.0" style="-fx-background-radius: 8; -fx-background-color: #80aa00;">
+<Pane fx:id="Book" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="74.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="readingBook.ReadingBookController">
+    <HBox layoutY="6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="400.0" style="-fx-background-radius: 5; -fx-background-color: #ffffff;">
       <children>
          <Text fx:id="idBook" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="65.13672065734863">
             <HBox.margin>
@@ -15,15 +15,15 @@
          </Text>
          <VBox prefHeight="63.0" prefWidth="235.0">
             <children>
-               <Text fx:id="bookCopyId" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+               <Text fx:id="bookCopyId" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="224.13671112060547">
                   <VBox.margin>
                      <Insets bottom="2.0" top="2.0" />
                   </VBox.margin></Text>
-               <Text fx:id="titleBook" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+               <Text fx:id="titleBook" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="226.13672637939453">
                   <VBox.margin>
                      <Insets bottom="2.0" top="1.0" />
                   </VBox.margin></Text>
-               <Text fx:id="borrowDate" strokeType="OUTSIDE" strokeWidth="0.0" text="borrowDate">
+               <Text fx:id="borrowDate" strokeType="OUTSIDE" strokeWidth="0.0" text="borrowDate" wrappingWidth="223.994140625">
                   <VBox.margin>
                      <Insets bottom="2.0" top="1.0" />
                   </VBox.margin>

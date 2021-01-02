@@ -7,7 +7,7 @@
 <?import javafx.scene.text.*?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="124.0" prefWidth="372.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="item.ItemController">
-   <HBox layoutY="6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="112.0" prefWidth="372.0" style="-fx-background-radius: 20; -fx-background-color: #80ff00;">
+   <HBox layoutY="6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="112.0" prefWidth="372.0" style="-fx-background-radius: 7; -fx-background-color: #ffffff;">
       <children>
          <ImageView fitHeight="90.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
             <image>
@@ -29,8 +29,8 @@
          </VBox>
          <VBox prefHeight="98.0" prefWidth="113.0">
             <children>
-               <Button mnemonicParsing="false" onAction="#onClickedDetalis" prefHeight="50.0" prefWidth="118.0" style="-fx-background-radius: 10;" text="Details" />
-               <Button fx:id="borrow" mnemonicParsing="false" onMouseClicked="#OnClickedBorrow" prefHeight="52.0" prefWidth="125.0" style="-fx-background-radius: 10;" text="Borrow">
+               <Button mnemonicParsing="false" onAction="#onClickedDetalis" prefHeight="50.0" prefWidth="118.0" style="-fx-background-radius: 5; -fx-background-color: #ccffcc;" text="Details" />
+               <Button fx:id="borrow" mnemonicParsing="false" onMouseClicked="#OnClickedBorrow" prefHeight="52.0" prefWidth="125.0" style="-fx-background-radius: 7; -fx-background-color: #ccffcc;" text="Borrow">
                   <VBox.margin>
                      <Insets top="5.0" />
                   </VBox.margin></Button>

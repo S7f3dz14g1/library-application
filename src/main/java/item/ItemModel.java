@@ -1,6 +1,9 @@
 package item;
 
 import api.ApiConfig;
+import models.LibraryBook;
+
+import java.util.List;
 
 public class ItemModel {
 
@@ -28,6 +31,16 @@ public class ItemModel {
         }catch (Exception e){
             controller.showInformationWindow();
         }
+    }
+
+    public int getBooksCopies(){
+        int copies=0;
+        List<LibraryBook> bookList=apiConfig.getBooks();
+        for (LibraryBook book:bookList){
+            if(book.getId()+""==idBook)
+                copies++;
+        }
+        return copies;
     }
 
     public void setToken(String token) {

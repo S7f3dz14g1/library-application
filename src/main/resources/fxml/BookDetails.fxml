@@ -106,10 +106,16 @@
                </HBox.margin></Text>
          </children>
       </HBox>
-      <Button mnemonicParsing="false" onAction="#onClickedBack" text="Back">
+      <Button mnemonicParsing="false" onAction="#onClickedBack" style="-fx-background-color: #ccffcc;" text="Back">
          <VBox.margin>
-            <Insets left="180.0" />
+            <Insets bottom="45.0" left="180.0" right="25.0" top="25.0" />
          </VBox.margin>
+         <opaqueInsets>
+            <Insets bottom="5.0" top="5.0" />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="7.0" left="10.0" right="10.0" top="7.0" />
+         </padding>
       </Button>
    </children>
 </VBox>

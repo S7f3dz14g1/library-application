@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
@@ -26,6 +27,9 @@ public class ItemController implements Initializable {
 
     @FXML
     private Button borrow;
+
+   @FXML
+   private Pane item;
 
     private VBox parent;
 
@@ -73,6 +77,8 @@ public class ItemController implements Initializable {
     }
 
     public void OnClickedBorrow(MouseEvent mouseEvent) {
+       if(model.getBooksCopies()==1)
+           parent.getChildren().remove(item);
        model.borrowBook();
      }
 

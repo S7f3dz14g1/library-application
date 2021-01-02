@@ -61,13 +61,7 @@ public class BookListModel {
         return bookList;
     }
 
-    public LibraryBook getBookById(int id){
-        for (LibraryBook book:bookList){
-            if (book.getId()==id)
-                return book;
-        }
-        return null;
-    }
+
 
     public List<LibraryBook> getBookByDiscover(){
         List<LibraryBook> helper=new ArrayList<>();
