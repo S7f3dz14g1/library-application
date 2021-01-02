@@ -54,6 +54,7 @@ public class BookListController implements Initializable {
         List<UserHistory> bookList=model.getUserHistory(token);
         Node[] node=new Node[bookList.size()];
         for (int i = 0; i <bookList.size(); i++) {
+            if(bookList.get(i).getReturnedDate()!=null){
                 FXMLLoader loader= new  FXMLLoader(this.getClass().getResource("/fxml/HistoryBook.fxml"));
                 try {
                     node[i]= loader.load();
@@ -66,7 +67,7 @@ public class BookListController implements Initializable {
                 historyBookController.setReturnedDate(bookList.get(i).getReturnedDate().toString());
                 historyBookController.setBorrowDate(bookList.get(i).getBorrowDate().toString());
                 listItem.getChildren().add(node[i]);
-
+            }
         }
     }
 
